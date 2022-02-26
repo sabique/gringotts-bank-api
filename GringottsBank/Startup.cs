@@ -1,3 +1,5 @@
+using AutoMapper;
+using DataLayer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -7,10 +9,12 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using ProcessLayer;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Utility;
 
 namespace GringottsBank
 {
@@ -32,6 +36,17 @@ namespace GringottsBank
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "GringottsBank", Version = "v1" });
             });
+
+            var mapperConfig = new MapperConfiguration(cfg =>
+            {
+                cfg.AddProfile(new MappingProfile());
+            });
+
+            IMapper mapper = mapperConfig.CreateMapper();
+            services.AddSingleton(mapper);
+            //services.AddMvc();
+
+            InjectDependecy(services);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -54,6 +69,12 @@ namespace GringottsBank
             {
                 endpoints.MapControllers();
             });
+        }
+
+        private void InjectDependecy(IServiceCollection services)
+        {
+            services.AddTransient<ICustomerProcess, CustomerProcess>();
+            services.AddTransient<ICustomerData, CustomerData>();
         }
     }
 }

@@ -1,0 +1,17 @@
+D:\Training\GitHub\DataLayer\bin\Debug\net5.0\DataLayer.deps.json
+D:\Training\GitHub\DataLayer\bin\Debug\net5.0\DataLayer.dll
+D:\Training\GitHub\DataLayer\bin\Debug\net5.0\ref\DataLayer.dll
+D:\Training\GitHub\DataLayer\bin\Debug\net5.0\DataLayer.pdb
+D:\Training\GitHub\DataLayer\bin\Debug\net5.0\DomainModel.dll
+D:\Training\GitHub\DataLayer\bin\Debug\net5.0\ServiceModel.dll
+D:\Training\GitHub\DataLayer\bin\Debug\net5.0\DomainModel.pdb
+D:\Training\GitHub\DataLayer\bin\Debug\net5.0\ServiceModel.pdb
+D:\Training\GitHub\DataLayer\obj\Debug\net5.0\DataLayer.csproj.AssemblyReference.cache
+D:\Training\GitHub\DataLayer\obj\Debug\net5.0\DataLayer.GeneratedMSBuildEditorConfig.editorconfig
+D:\Training\GitHub\DataLayer\obj\Debug\net5.0\DataLayer.AssemblyInfoInputs.cache
+D:\Training\GitHub\DataLayer\obj\Debug\net5.0\DataLayer.AssemblyInfo.cs
+D:\Training\GitHub\DataLayer\obj\Debug\net5.0\DataLayer.csproj.CoreCompileInputs.cache
+D:\Training\GitHub\DataLayer\obj\Debug\net5.0\DataLayer.csproj.CopyComplete
+D:\Training\GitHub\DataLayer\obj\Debug\net5.0\DataLayer.dll
+D:\Training\GitHub\DataLayer\obj\Debug\net5.0\ref\DataLayer.dll
+D:\Training\GitHub\DataLayer\obj\Debug\net5.0\DataLayer.pdb

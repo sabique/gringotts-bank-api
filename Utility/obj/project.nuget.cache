@@ -1,8 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "gHdcGoA0gH/RVUzP5lttVfKLkL/6sXEHsUHjdJCpcpBCpv66Qhcpm4ZQyW+x76dJfdwlNl8fEhJzEbpin0x2zA==",
+  "dgSpecHash": "BpEWGZXVuDE/wFUipTLtc/o8JO2KN26Hfl3X9ABVnMC3SbGEIWh6YHIA2Ax3MjtPJ/c6mcLkPxWbImphWS8Y2w==",
   "success": true,
   "projectFilePath": "D:\\Training\\GitHub\\Utility\\Utility.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Sabique\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",
+    "C:\\Users\\Sabique\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
+    "C:\\Users\\Sabique\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\6.0.0\\microsoft.extensions.configuration.abstractions.6.0.0.nupkg.sha512",
+    "C:\\Users\\Sabique\\.nuget\\packages\\microsoft.extensions.primitives\\6.0.0\\microsoft.extensions.primitives.6.0.0.nupkg.sha512",
+    "C:\\Users\\Sabique\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
+  ],
   "logs": []
 }

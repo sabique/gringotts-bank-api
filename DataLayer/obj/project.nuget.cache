@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "GWkCwSXxcGGkeLV+MPPEYIsG/x6D5hshdYc9NPJyQeSVZqQZ7LvQRcmhf/lZ0dBI4XCxnw4r102FLLFfELfRnA==",
+  "dgSpecHash": "X8xFQ1BMlxm0MlNIvD5xqS68uZOkwBczCAdLzUF0GmdSZzkkaqKCKCQyoRnaam5v+Ml/aOjnzYtCDZPqTbyqrg==",
   "success": true,
   "projectFilePath": "D:\\Training\\GitHub\\DataLayer\\DataLayer.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Sabique\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\6.0.0\\microsoft.extensions.configuration.abstractions.6.0.0.nupkg.sha512",
+    "C:\\Users\\Sabique\\.nuget\\packages\\microsoft.extensions.primitives\\6.0.0\\microsoft.extensions.primitives.6.0.0.nupkg.sha512",
+    "C:\\Users\\Sabique\\.nuget\\packages\\npgsql\\6.0.3\\npgsql.6.0.3.nupkg.sha512",
+    "C:\\Users\\Sabique\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
+  ],
   "logs": []
 }

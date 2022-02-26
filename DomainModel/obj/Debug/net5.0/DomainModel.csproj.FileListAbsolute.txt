@@ -1,0 +1,12 @@
+D:\Training\GitHub\DomainModel\bin\Debug\net5.0\DomainModel.deps.json
+D:\Training\GitHub\DomainModel\bin\Debug\net5.0\DomainModel.dll
+D:\Training\GitHub\DomainModel\bin\Debug\net5.0\ref\DomainModel.dll
+D:\Training\GitHub\DomainModel\bin\Debug\net5.0\DomainModel.pdb
+D:\Training\GitHub\DomainModel\obj\Debug\net5.0\DomainModel.csproj.AssemblyReference.cache
+D:\Training\GitHub\DomainModel\obj\Debug\net5.0\DomainModel.GeneratedMSBuildEditorConfig.editorconfig
+D:\Training\GitHub\DomainModel\obj\Debug\net5.0\DomainModel.AssemblyInfoInputs.cache
+D:\Training\GitHub\DomainModel\obj\Debug\net5.0\DomainModel.AssemblyInfo.cs
+D:\Training\GitHub\DomainModel\obj\Debug\net5.0\DomainModel.csproj.CoreCompileInputs.cache
+D:\Training\GitHub\DomainModel\obj\Debug\net5.0\DomainModel.dll
+D:\Training\GitHub\DomainModel\obj\Debug\net5.0\ref\DomainModel.dll
+D:\Training\GitHub\DomainModel\obj\Debug\net5.0\DomainModel.pdb

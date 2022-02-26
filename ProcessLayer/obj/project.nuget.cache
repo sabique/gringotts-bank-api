@@ -1,8 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "vDLjOPOGAlvTr7XDGzGcAIUn4O6LlNNeK3ICVKuLrHGCGlRoTo9EZdIttpylXC+38xgyMqnRjdoaBuvHgYYp4A==",
+  "dgSpecHash": "LFfCrKjo/kcwPrdKKbPMUxdKJLfbYukhJYlXYBIcoemmcflTSP5Nr3EKte/qqSKU80tMkjpUT5XP6lYUJeasTA==",
   "success": true,
   "projectFilePath": "D:\\Training\\GitHub\\ProcessLayer\\ProcessLayer.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Sabique\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",
+    "C:\\Users\\Sabique\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
+    "C:\\Users\\Sabique\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\6.0.0\\microsoft.extensions.configuration.abstractions.6.0.0.nupkg.sha512",
+    "C:\\Users\\Sabique\\.nuget\\packages\\microsoft.extensions.primitives\\6.0.0\\microsoft.extensions.primitives.6.0.0.nupkg.sha512",
+    "C:\\Users\\Sabique\\.nuget\\packages\\npgsql\\6.0.3\\npgsql.6.0.3.nupkg.sha512",
+    "C:\\Users\\Sabique\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
+  ],
   "logs": []
 }
