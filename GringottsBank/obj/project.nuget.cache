@@ -1,15 +1,17 @@
 {
   "version": 2,
-  "dgSpecHash": "BLJ8TlDKAUdy7IBAsOVNOuaW7ZwLzq0e7oDfhhSFF/0KfS7AnIeNSQNKRJ9TgDdZHp1DKQM9yaLEaWuJPoz+ew==",
+  "dgSpecHash": "UvVXeV/Qtt0/SyxIjJUM6M9OTdTuPFgvcrwWIYQUaXaBSkRYH9OPuQlmrzO6FQZFMjvZ5igcJYGgRQXp7UK5bA==",
   "success": true,
   "projectFilePath": "D:\\Training\\GitHub\\GringottsBank\\GringottsBank.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Sabique\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
     "C:\\Users\\Sabique\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\Sabique\\.nuget\\packages\\npgsql\\6.0.3\\npgsql.6.0.3.nupkg.sha512",
     "C:\\Users\\Sabique\\.nuget\\packages\\swashbuckle.aspnetcore\\5.6.3\\swashbuckle.aspnetcore.5.6.3.nupkg.sha512",
     "C:\\Users\\Sabique\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\5.6.3\\swashbuckle.aspnetcore.swagger.5.6.3.nupkg.sha512",
     "C:\\Users\\Sabique\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\5.6.3\\swashbuckle.aspnetcore.swaggergen.5.6.3.nupkg.sha512",
-    "C:\\Users\\Sabique\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\5.6.3\\swashbuckle.aspnetcore.swaggerui.5.6.3.nupkg.sha512"
+    "C:\\Users\\Sabique\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\5.6.3\\swashbuckle.aspnetcore.swaggerui.5.6.3.nupkg.sha512",
+    "C:\\Users\\Sabique\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
   ],
   "logs": []
 }
