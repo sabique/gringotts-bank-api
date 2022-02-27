@@ -21,6 +21,10 @@ jobs:
         with:
           dotnet-version: '5.0.x'
           include-prerelease: true
+          
+      - name: Install dependecies
+        run: dotnet restore
+        working-directory: /GringottsBank
 
       - name: Build with dotnet
         run: dotnet build --configuration Release
@@ -32,7 +36,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: .net-app
-          path: ${{env.DOTNET_ROOT}}/GringottsBank
+          path: ${{env.DOTNET_ROOT}}/myapp
 
   deploy:
     runs-on: windows-latest
