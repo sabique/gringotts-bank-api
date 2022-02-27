@@ -15,6 +15,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Utility;
+using static Utility.Enum;
 
 namespace GringottsBank
 {
@@ -26,6 +27,7 @@ namespace GringottsBank
         }
 
         public IConfiguration Configuration { get; }
+        public delegate ITransactionProcess TransactionProcessResolver(TransactionType type);
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
@@ -74,8 +76,28 @@ namespace GringottsBank
         {
             services.AddTransient<ICustomerProcess, CustomerProcess>();
             services.AddTransient<ICustomerData, CustomerData>();
+            
             services.AddTransient<IAccountProcess, AccountProcess>();
             services.AddTransient<IAccountData, AccountData>();
+
+            services.AddTransient<ITransactionData, TransactionData>();
+            services.AddTransient<DepositTransactionProcess>();
+            services.AddTransient<WithdrawTransactionProcess>();
+
+            services.AddTransient<TransactionProcessResolver>(provider => type =>
+            {
+                switch (type)
+                {
+                    case TransactionType.Withdraw:
+                        return provider.GetService<WithdrawTransactionProcess>();
+                    case TransactionType.Deposit:
+                        return provider.GetService<DepositTransactionProcess>();
+                    default:
+                        throw new KeyNotFoundException();
+                }
+            });
         }
+
+
     }
 }

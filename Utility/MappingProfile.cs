@@ -15,6 +15,9 @@ namespace Utility
                 .ForMember(d => d.CreatedOn, s => s.MapFrom(x => DateTime.UtcNow))
                 .ForMember(d => d.ModifiedOn, s => s.MapFrom(x => DateTime.UtcNow))
                 .ForMember(d => d.Currency, s => s.MapFrom(x => Currency.USD));
+
+            CreateMap<SM.Transaction, DM.Transaction>()
+                .ForMember(d => d.CreatedOn, s => s.MapFrom(x => DateTime.UtcNow));
         }
     }
 }

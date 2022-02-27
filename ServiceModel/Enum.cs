@@ -13,5 +13,11 @@ namespace Utility
             Saving,
             Current
         }
+
+        public enum TransactionType
+        {
+            Deposit,
+            Withdraw
+        }
     }
 }
