@@ -79,5 +79,19 @@ namespace DataLayer
                 throw;
             }
         }
+
+        public async Task<bool> Exist(int customerId)
+        {
+            try
+            {
+                var result = await Get(customerId);
+
+                return result.Rows.Count > 0;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
     }
 }

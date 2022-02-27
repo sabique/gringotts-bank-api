@@ -44,7 +44,6 @@ namespace GringottsBank
 
             IMapper mapper = mapperConfig.CreateMapper();
             services.AddSingleton(mapper);
-            //services.AddMvc();
 
             InjectDependecy(services);
         }
@@ -75,6 +74,8 @@ namespace GringottsBank
         {
             services.AddTransient<ICustomerProcess, CustomerProcess>();
             services.AddTransient<ICustomerData, CustomerData>();
+            services.AddTransient<IAccountProcess, AccountProcess>();
+            services.AddTransient<IAccountData, AccountData>();
         }
     }
 }

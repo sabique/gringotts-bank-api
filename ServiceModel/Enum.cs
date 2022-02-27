@@ -8,5 +8,10 @@ namespace Utility
 {
     public class Enum
     {
+        public enum AccountType
+        {
+            Saving,
+            Current
+        }
     }
 }
