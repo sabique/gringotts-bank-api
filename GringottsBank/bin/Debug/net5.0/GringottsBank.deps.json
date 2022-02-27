@@ -1329,7 +1329,9 @@
         "dependencies": {
           "AutoMapper": "11.0.1",
           "DataLayer": "1.0.0",
-          "ServiceModel": "1.0.0"
+          "Microsoft.AspNet.WebApi.Core": "5.2.7",
+          "ServiceModel": "1.0.0",
+          "Utility": "1.0.0"
         },
         "runtime": {
           "ProcessLayer.dll": {}

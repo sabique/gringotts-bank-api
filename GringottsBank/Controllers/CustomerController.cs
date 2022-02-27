@@ -30,6 +30,18 @@ namespace GringottsBank.Controllers
             var response = await _customerProcess.Add(customer);
 
             return response.StatusCode == HttpStatusCode.OK ? Ok(response) : BadRequest(response);
-        } 
+        }
+
+        [Route("[action]")]
+        [HttpGet]
+        public async Task<IActionResult> Get(int customerId)
+        {
+            if (!int.TryParse(customerId.ToString(), out _))
+                return BadRequest("Enter a valid customer id");
+
+            var response = await _customerProcess.Get(customerId);
+
+            return response != null ? Ok(response) : NotFound(response);
+        }
     }
 }

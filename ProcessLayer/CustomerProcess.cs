@@ -3,9 +3,12 @@ using DataLayer;
 using ServiceModel;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.Http.Results;
+using Utility;
 
 namespace ProcessLayer
 {
@@ -32,6 +35,20 @@ namespace ProcessLayer
             catch (Exception e)
             {
                 return new FailResponse() { Message = $"Failed to create new customer - {e.Message}" };
+            }
+        }
+
+        public async Task<Customer> Get(int customerId)
+        {
+            try
+            {
+                var response = await _customerData.Get(customerId);
+
+                return response.GetT<Customer>();
+            }
+            catch (Exception)
+            {
+                return null;
             }
         }
     }

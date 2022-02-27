@@ -47,5 +47,37 @@ namespace DataLayer
                 throw;
             }
         }
+
+        public async Task<DataTable> Get(int customerId)
+        {
+            try
+            {
+                string query = $"SELECT firstname AS \"FirstName\", lastname AS \"LastName\", email AS \"Email\" FROM public.\"Customer\" WHERE id=@customerId;";
+
+                DataTable table = new DataTable();
+                string sqlDataSource = _configuration.GetConnectionString("database");
+
+                NpgsqlDataReader myReader;
+                using (NpgsqlConnection myCon = new NpgsqlConnection(sqlDataSource))
+                {
+                    myCon.Open();
+                    using (NpgsqlCommand myCommand = new NpgsqlCommand(query, myCon))
+                    {
+
+                        myCommand.Parameters.AddWithValue("@customerId", customerId);
+                        myReader = await myCommand.ExecuteReaderAsync();
+                        table.Load(myReader);
+                        myReader.Close();
+                        myCon.Close();
+                    }
+                }
+
+                return table;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
     }
 }
