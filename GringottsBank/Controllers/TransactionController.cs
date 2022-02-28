@@ -1,11 +1,9 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using ProcessLayer;
 using ServiceModel;
 using System;
-using System.Collections.Generic;
 using System.Globalization;
-using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
 using static GringottsBank.Startup;
@@ -14,6 +12,7 @@ namespace GringottsBank.Controllers
 {
     [ApiController]
     [Route("[controller]")]
+    [Authorize]
     public class TransactionController : ControllerBase
     {
         private readonly ITransactionProcess _depositProcess;

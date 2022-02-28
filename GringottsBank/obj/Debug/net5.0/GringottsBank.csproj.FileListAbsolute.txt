@@ -46,3 +46,10 @@ D:\Training\GitHub\GringottsBank\bin\Debug\net5.0\DomainModel.pdb
 D:\Training\GitHub\GringottsBank\bin\Debug\net5.0\AutoMapper.dll
 D:\Training\GitHub\GringottsBank\bin\Debug\net5.0\Utility.dll
 D:\Training\GitHub\GringottsBank\bin\Debug\net5.0\Utility.pdb
+D:\Training\GitHub\GringottsBank\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\Training\GitHub\GringottsBank\bin\Debug\net5.0\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\Training\GitHub\GringottsBank\bin\Debug\net5.0\Microsoft.IdentityModel.Logging.dll
+D:\Training\GitHub\GringottsBank\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.dll
+D:\Training\GitHub\GringottsBank\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\Training\GitHub\GringottsBank\bin\Debug\net5.0\Microsoft.IdentityModel.Tokens.dll
+D:\Training\GitHub\GringottsBank\bin\Debug\net5.0\System.IdentityModel.Tokens.Jwt.dll

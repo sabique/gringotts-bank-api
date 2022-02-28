@@ -9,4 +9,3 @@ D:\Training\GitHub\DomainModel\obj\Debug\net5.0\DomainModel.csproj.CoreCompileIn
 D:\Training\GitHub\DomainModel\obj\Debug\net5.0\DomainModel.dll
 D:\Training\GitHub\DomainModel\obj\Debug\net5.0\ref\DomainModel.dll
 D:\Training\GitHub\DomainModel\obj\Debug\net5.0\DomainModel.pdb
-D:\Training\GitHub\DomainModel\obj\Debug\net5.0\DomainModel.csproj.AssemblyReference.cache
