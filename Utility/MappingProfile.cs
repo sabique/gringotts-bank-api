@@ -1,6 +1,5 @@
 ﻿using AutoMapper;
 using System;
-using static ServiceModel.Enum;
 using static Utility.Constant;
 using DM = DomainModel;
 using SM = ServiceModel;

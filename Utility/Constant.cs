@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Utility
+﻿namespace Utility
 {
     public static class Constant
     {
