@@ -1,0 +1,106 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>GringottsBank</name>
+    </assembly>
+    <members>
+        <member name="T:GringottsBank.Controllers.AccountController">
+            <summary>
+            Manage the operations for account entity
+            </summary>
+        </member>
+        <member name="M:GringottsBank.Controllers.AccountController.Add(ServiceModel.OpenAccount)">
+            <summary>
+            Add a new account
+            </summary>
+            <param name="account">The details of the new account: Type: Saving Account = 0, Current Account = 1; Amount: Opening balance; CustomerId: The id of the existing customer</param>
+            <returns>If success, then returns the response with account id else bad request</returns>
+        </member>
+        <member name="M:GringottsBank.Controllers.AccountController.GetCustomerAccounts(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Get all the accounts of a customer
+            </summary>
+            <param name="customerId">The customer id</param>
+            <param name="skip">Skip the number of account from the top, default is 0</param>
+            <param name="take">Return number of account for a customer, default is 10</param>
+            <returns>Returns the list of accounts of a customer</returns>
+        </member>
+        <member name="M:GringottsBank.Controllers.AccountController.Get(System.Int32)">
+            <summary>
+            Get the details of an account
+            </summary>
+            <param name="accountId">The account number</param>
+            <returns>Returns the detail of the account</returns>
+        </member>
+        <member name="T:GringottsBank.Controllers.AdminController">
+            <summary>
+            Admin endpoints help to generate bearer token for authorization
+            </summary>
+        </member>
+        <member name="M:GringottsBank.Controllers.AdminController.GenerateToken(System.String)">
+            <summary>
+            Generate the bearer token to use endpoints
+            </summary>
+            <param name="secretKey">The secret key is `getir`</param>
+            <returns>Returns the bearer token for authorization</returns>
+        </member>
+        <member name="T:GringottsBank.Controllers.CustomerController">
+            <summary>
+            Manage the operations for customer entity
+            </summary>
+        </member>
+        <member name="M:GringottsBank.Controllers.CustomerController.Add(ServiceModel.Customer)">
+            <summary>
+            Add a new customer
+            </summary>
+            <param name="customer">The details of the new customer</param>
+            <returns>If success, then returns the response with customer id else bad request</returns>
+        </member>
+        <member name="M:GringottsBank.Controllers.CustomerController.Get(System.Int32)">
+            <summary>
+            Get the details of an existing customer
+            </summary>
+            <param name="customerId">The id of the customer</param>
+            <returns>If found, then returns the details of the customer else empty response</returns>
+        </member>
+        <member name="T:GringottsBank.Controllers.TransactionController">
+            <summary>
+            Manage the operations for transaction entity
+            </summary>
+        </member>
+        <member name="M:GringottsBank.Controllers.TransactionController.Deposit(ServiceModel.Transaction)">
+            <summary>
+            Deposit money to an account
+            </summary>
+            <param name="transaction">The details of the transaction to perform</param>
+            <returns>If success, then returns the response with current balance else bad request</returns>
+        </member>
+        <member name="M:GringottsBank.Controllers.TransactionController.Withdraw(ServiceModel.Transaction)">
+            <summary>
+            Withdraw money from an account
+            </summary>
+            <param name="transaction">The details of the transaction to perform</param>
+            <returns>If success, then returns the response with current balance else bad request</returns>
+        </member>
+        <member name="M:GringottsBank.Controllers.TransactionController.GetAllTransactions(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Get all the transactions of an account
+            </summary>
+            <param name="accountId">The account number of customer</param>
+            <param name="skip">Skip the number of transation from the top, default is 0</param>
+            <param name="take">Return number of transaction for a account, default is 10</param>
+            <returns>Returns the list of transactions for an account</returns>
+        </member>
+        <member name="M:GringottsBank.Controllers.TransactionController.GetAllTransactionsBetweenDate(System.Int32,System.String,System.String,System.Int32,System.Int32)">
+            <summary>
+            Get all the transactions of an account between a time period
+            </summary>
+            <param name="accountId">The account number of customer</param>
+            <param name="startDate">Fetch transactions occurred on or after this date</param>
+            <param name="endDate">Fetch transactions occurred before this date</param>
+            <param name="skip">Skip the number of transation from the top, default is 0</param>
+            <param name="take">Return number of transaction for a account, default is 10</param>
+            <returns>Returns the list of transactions for an account</returns>
+        </member>
+    </members>
+</doc>

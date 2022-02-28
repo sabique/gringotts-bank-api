@@ -6,6 +6,9 @@ using System.Text;
 
 namespace GringottsBank.Controllers
 {
+    /// <summary>
+    /// Admin endpoints help to generate bearer token for authorization
+    /// </summary>
     [ApiController]
     [Route("[controller]")]
     public class AdminController : ControllerBase
@@ -16,6 +19,11 @@ namespace GringottsBank.Controllers
             _secretKey = "getir";
         }
 
+        /// <summary>
+        /// Generate the bearer token to use endpoints
+        /// </summary>
+        /// <param name="secretKey">The secret key is `getir`</param>
+        /// <returns>Returns the bearer token for authorization</returns>
         [HttpGet]
         [Route("[action]")]
         public IActionResult GenerateToken(string secretKey)

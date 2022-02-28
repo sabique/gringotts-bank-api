@@ -10,6 +10,9 @@ using static GringottsBank.Startup;
 
 namespace GringottsBank.Controllers
 {
+    /// <summary>
+    /// Manage the operations for transaction entity
+    /// </summary>
     [ApiController]
     [Route("[controller]")]
     [Authorize]
@@ -26,6 +29,11 @@ namespace GringottsBank.Controllers
             this._transactionProcess = transactionProcess;
         }
 
+        /// <summary>
+        /// Deposit money to an account
+        /// </summary>
+        /// <param name="transaction">The details of the transaction to perform</param>
+        /// <returns>If success, then returns the response with current balance else bad request</returns>
         [Route("[action]")]
         [HttpPost]
         public async Task<IActionResult> Deposit(Transaction transaction)
@@ -38,6 +46,11 @@ namespace GringottsBank.Controllers
             return response.StatusCode == HttpStatusCode.OK ? Ok(response) : BadRequest(response);
         }
 
+        /// <summary>
+        /// Withdraw money from an account
+        /// </summary>
+        /// <param name="transaction">The details of the transaction to perform</param>
+        /// <returns>If success, then returns the response with current balance else bad request</returns>
         [Route("[action]")]
         [HttpPost]
         public async Task<IActionResult> Withdraw(Transaction transaction)
@@ -73,8 +86,8 @@ namespace GringottsBank.Controllers
         /// Get all the transactions of an account between a time period
         /// </summary>
         /// <param name="accountId">The account number of customer</param>
-        /// <param name="startDate">The transactions occurred on or after this date</param>
-        /// <param name="endDate">The transactions occurred before this date</param>
+        /// <param name="startDate">Fetch transactions occurred on or after this date</param>
+        /// <param name="endDate">Fetch transactions occurred before this date</param>
         /// <param name="skip">Skip the number of transation from the top, default is 0</param>
         /// <param name="take">Return number of transaction for a account, default is 10</param>
         /// <returns>Returns the list of transactions for an account</returns>

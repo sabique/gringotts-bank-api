@@ -11,6 +11,7 @@ using Microsoft.OpenApi.Models;
 using ProcessLayer;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
 using Utility;
 using static ServiceModel.Enum;
@@ -35,6 +36,9 @@ namespace GringottsBank
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "GringottsBank", Version = "v1" });
+
+                var filePath = Path.Combine(System.AppContext.BaseDirectory, "GringottsBank.xml");
+                c.IncludeXmlComments(filePath);
 
                 c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme()
                 {

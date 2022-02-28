@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace GringottsBank.Controllers
 {
+    /// <summary>
+    /// Manage the operations for customer entity
+    /// </summary>
     [ApiController]
     [Route("[controller]")]
     [Authorize]
@@ -18,6 +21,11 @@ namespace GringottsBank.Controllers
             this._customerProcess = customerProcess;
         }
 
+        /// <summary>
+        /// Add a new customer
+        /// </summary>
+        /// <param name="customer">The details of the new customer</param>
+        /// <returns>If success, then returns the response with customer id else bad request</returns>
         [Route("[action]")]
         [HttpPost]
         public async Task<IActionResult> Add(Customer customer)
@@ -30,6 +38,11 @@ namespace GringottsBank.Controllers
             return response.StatusCode == HttpStatusCode.OK ? Ok(response) : BadRequest(response);
         }
 
+        /// <summary>
+        /// Get the details of an existing customer
+        /// </summary>
+        /// <param name="customerId">The id of the customer</param>
+        /// <returns>If found, then returns the details of the customer else empty response</returns>
         [Route("[action]")]
         [HttpGet]
         public async Task<IActionResult> Get(int customerId)

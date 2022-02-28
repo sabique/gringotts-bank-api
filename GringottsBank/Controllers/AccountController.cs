@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace GringottsBank.Controllers
 {
+    /// <summary>
+    /// Manage the operations for account entity
+    /// </summary>
     [ApiController]
     [Route("[controller]")]
     [Authorize]
@@ -18,6 +21,11 @@ namespace GringottsBank.Controllers
             this._accountProcess = accountProcess;
         }
 
+        /// <summary>
+        /// Add a new account
+        /// </summary>
+        /// <param name="account">The details of the new account: Type: Saving Account = 0, Current Account = 1; Amount: Opening balance; CustomerId: The id of the existing customer</param>
+        /// <returns>If success, then returns the response with account id else bad request</returns>
         [Route("[action]")]
         [HttpPost]
         public async Task<IActionResult> Add(OpenAccount account)
