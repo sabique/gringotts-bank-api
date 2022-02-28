@@ -1506,7 +1506,8 @@
           "DomainModel": "1.0.0",
           "Microsoft.Extensions.Configuration.Abstractions": "6.0.0",
           "Npgsql": "6.0.3",
-          "ServiceModel": "1.0.0"
+          "ServiceModel": "1.0.0",
+          "Utility": "1.0.0"
         },
         "compile": {
           "bin/placeholder/DataLayer.dll": {}

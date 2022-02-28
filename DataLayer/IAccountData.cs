@@ -7,7 +7,7 @@ namespace DataLayer
     public interface IAccountData
     {
         Task<int> Add(Account account);
-        Task<int> CurrentBalance(int accountId);
-        Task UpdateBalance(int accountId, decimal amount);
+        Task<int> CurrentBalance(long accountId);
+        Task UpdateBalance(long accountId, double amount);
     }
 }

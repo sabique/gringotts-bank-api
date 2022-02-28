@@ -29,5 +29,33 @@ namespace Utility
 
             return objT;
         }
+
+        public static List<T> GetTCollection<T>(this DataTable dataTable)
+        {
+            if (dataTable.Rows.Count < 1)
+                return default(List<T>);
+
+            var columnNames = dataTable.Columns.Cast<DataColumn>().Select(c => c.ColumnName.ToLower()).ToList();
+            var properties = typeof(T).GetProperties();
+
+            List<T> collection = new List<T>();
+
+            foreach(DataRow row in dataTable.Rows)
+            {
+                var objT = Activator.CreateInstance<T>();
+
+                foreach (var pro in properties)
+                {
+                    if (columnNames.Contains(pro.Name.ToLower()))
+                    {
+                        pro.SetValue(objT, row[pro.Name.ToLower()]);
+                    }
+                }
+
+                collection.Add(objT);
+            }
+
+            return collection;
+        }
     }
 }

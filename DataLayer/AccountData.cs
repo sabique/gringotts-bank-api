@@ -52,7 +52,7 @@ namespace DataLayer
             }
         }
 
-        public async Task<int> CurrentBalance(int accountId)
+        public async Task<int> CurrentBalance(long accountId)
         {
             try
             {
@@ -86,7 +86,7 @@ namespace DataLayer
             }
         }
 
-        public async Task UpdateBalance(int accountId, decimal amount)
+        public async Task UpdateBalance(long accountId, double amount)
         {
             try
             {

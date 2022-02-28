@@ -6,11 +6,11 @@ namespace DomainModel
     public class Transaction
     {
         [Key]
-        public int Id { get; set; }
-        public int AccountId { get; set; }
+        public long Id { get; set; }
+        public long AccountId { get; set; }
         public string Type { get; set; }
-        public decimal Amount { get; set; }
+        public double Amount { get; set; }
         public DateTime CreatedOn { get; set; }
-        public decimal Balance { get; set; }
+        public double Balance { get; set; }
     }
 }

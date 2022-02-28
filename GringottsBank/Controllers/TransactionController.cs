@@ -17,10 +17,13 @@ namespace GringottsBank.Controllers
     {
         private readonly ITransactionProcess _depositProcess;
         private readonly ITransactionProcess _withdrawProcess;
-        public TransactionController(TransactionProcessResolver processAccessor)
+        private readonly ITransactionDetailProcess _transactionProcess;
+
+        public TransactionController(TransactionProcessResolver processAccessor, ITransactionDetailProcess transactionProcess)
         {
             this._depositProcess = processAccessor(Utility.Enum.TransactionType.Deposit);
             this._withdrawProcess = processAccessor(Utility.Enum.TransactionType.Withdraw);
+            this._transactionProcess = transactionProcess;
         }
 
         [Route("[action]")]
@@ -45,6 +48,25 @@ namespace GringottsBank.Controllers
             var response = await _withdrawProcess.Transact(transaction);
 
             return response.StatusCode == HttpStatusCode.OK ? Ok(response) : BadRequest(response);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="accountId">The account number of customer</param>
+        /// <param name="skip">Skip the number of transation from the top, default is 0</param>
+        /// <param name="take">Return number of transaction for a account, default is 10</param>
+        /// <returns></returns>
+        [Route("[action]")]
+        [HttpGet]
+        public async Task<IActionResult> GetAllTransactions(int accountId, int skip = 0, int take = 10)
+        {
+            if (!int.TryParse(accountId.ToString(), out _))
+                return BadRequest("Enter a valid account id");
+
+            var response = await _transactionProcess.Transactions(accountId, skip, take);
+
+            return (response != null)? Ok(response) : NotFound(response);
         }
     }
 }

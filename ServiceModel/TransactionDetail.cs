@@ -8,12 +8,11 @@ using static Utility.Enum;
 
 namespace ServiceModel
 {
-    public class TransactionDetail
+    public class Transaction
     {
-        public int Id { get; set; }
-        public string Type { get; set; }
+        [Range(1, int.MaxValue, ErrorMessage = "Minimum USD 1 is required to transact")]
         public decimal Amount { get; set; }
-        public DateTime CreatedOn { get; set; }
-        public decimal Balance { get; set; }
+        [Range(100000, long.MaxValue, ErrorMessage = "Enter a valid account number")]
+        public int AccountId { get; set; }
     }
 }

@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace ProcessLayer
 {
-    public interface ITransactionDetailProcess
+    public interface ITransactionProcess
     {
-        Task<List<TransactionDetail>> Transactions(int accountId, int skip, int take);
+        Task<IResponse> Transact(Transaction transaction);
     }
 }

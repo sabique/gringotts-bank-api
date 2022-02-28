@@ -18,6 +18,8 @@ namespace Utility
 
             CreateMap<SM.Transaction, DM.Transaction>()
                 .ForMember(d => d.CreatedOn, s => s.MapFrom(x => DateTime.UtcNow));
+
+            CreateMap<DM.Transaction, SM.TransactionDetail>();
         }
     }
 }

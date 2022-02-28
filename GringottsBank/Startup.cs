@@ -97,6 +97,8 @@ namespace GringottsBank
                         throw new KeyNotFoundException();
                 }
             });
+
+            services.AddTransient<ITransactionDetailProcess, TransactionDetailProcess>();
         }
 
 

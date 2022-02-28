@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "X8xFQ1BMlxm0MlNIvD5xqS68uZOkwBczCAdLzUF0GmdSZzkkaqKCKCQyoRnaam5v+Ml/aOjnzYtCDZPqTbyqrg==",
+  "dgSpecHash": "tMvm0m8FOAKZnQx2fp1L4Qfx1+hFUyEkix6SuKNIyAsDwT8HnIbxDNH6QgOmmigW9+cU08227SKhYvkvTmD0eQ==",
   "success": true,
   "projectFilePath": "D:\\Training\\GitHub\\DataLayer\\DataLayer.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Sabique\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",
+    "C:\\Users\\Sabique\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\Sabique\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\6.0.0\\microsoft.extensions.configuration.abstractions.6.0.0.nupkg.sha512",
     "C:\\Users\\Sabique\\.nuget\\packages\\microsoft.extensions.primitives\\6.0.0\\microsoft.extensions.primitives.6.0.0.nupkg.sha512",
     "C:\\Users\\Sabique\\.nuget\\packages\\npgsql\\6.0.3\\npgsql.6.0.3.nupkg.sha512",

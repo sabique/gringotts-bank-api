@@ -2,8 +2,10 @@
 using Microsoft.Extensions.Configuration;
 using Npgsql;
 using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Threading.Tasks;
+using Utility;
 
 namespace DataLayer
 {
@@ -44,6 +46,40 @@ namespace DataLayer
                 }
 
                 return Convert.ToInt32(table.Rows[0][0].ToString());
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        public async Task<List<Transaction>> TransactionList(int accountId, int skip, int take)
+        {
+            try
+            {
+                string query = $"SELECT id AS \"Id\", amount AS \"Amount\", type AS \"Type\", balance AS \"Balance\", createdon AS \"CreatedOn\", accountid AS \"AccountId\" FROM public.\"Transaction\" WHERE accountid=@accountid ORDER BY id desc LIMIT @take OFFSET @skip;";
+
+                DataTable table = new DataTable();
+                string sqlDataSource = _configuration.GetConnectionString("database");
+
+                NpgsqlDataReader myReader;
+                using (NpgsqlConnection myCon = new NpgsqlConnection(sqlDataSource))
+                {
+                    await myCon.OpenAsync();
+                    using (NpgsqlCommand myCommand = new NpgsqlCommand(query, myCon))
+                    {
+
+                        myCommand.Parameters.AddWithValue("@accountid", accountId);
+                        myCommand.Parameters.AddWithValue("@skip", skip);
+                        myCommand.Parameters.AddWithValue("@take", take);
+                        myReader = await myCommand.ExecuteReaderAsync();
+                        table.Load(myReader);
+                        myReader.Close();
+                        await myCon.CloseAsync();
+                    }
+                }
+
+                return table.GetTCollection<Transaction>();
             }
             catch (Exception)
             {
