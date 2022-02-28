@@ -51,12 +51,12 @@ namespace GringottsBank.Controllers
         }
 
         /// <summary>
-        /// 
+        /// Get all the transactions of an account
         /// </summary>
         /// <param name="accountId">The account number of customer</param>
         /// <param name="skip">Skip the number of transation from the top, default is 0</param>
         /// <param name="take">Return number of transaction for a account, default is 10</param>
-        /// <returns></returns>
+        /// <returns>Returns the list of transactions for an account</returns>
         [Route("[action]")]
         [HttpGet]
         public async Task<IActionResult> GetAllTransactions(int accountId, int skip = 0, int take = 10)

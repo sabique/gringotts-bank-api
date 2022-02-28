@@ -42,5 +42,19 @@ namespace ProcessLayer
                 return new FailResponse() { Message = $"Failed to open new account - {e.Message}" };
             }
         }
+
+        public async Task<List<AccountDetail>> GetCustomerAccounts(int customerId, int skip, int take)
+        {
+            try
+            {
+                var response = await _accountData.AccountList(customerId, skip, take);
+
+                return _mapper.Map<List<AccountDetail>>(response);
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
     }
 }

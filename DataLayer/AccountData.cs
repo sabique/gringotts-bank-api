@@ -2,8 +2,10 @@
 using Microsoft.Extensions.Configuration;
 using Npgsql;
 using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Threading.Tasks;
+using Utility;
 
 namespace DataLayer
 {
@@ -110,6 +112,40 @@ namespace DataLayer
                         await myCon.CloseAsync();
                     }
                 }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        public async Task<List<Account>> AccountList(int customerId, int skip, int take)
+        {
+            try
+            {
+                string query = $"SELECT id AS \"Id\", amount AS \"Amount\", type AS \"Type\", currency AS \"Currency\", createdon AS \"CreatedOn\" FROM public.\"Account\" WHERE customerid=@customerid ORDER BY id asc LIMIT @take OFFSET @skip;";
+
+                DataTable table = new DataTable();
+                string sqlDataSource = _configuration.GetConnectionString("database");
+
+                NpgsqlDataReader myReader;
+                using (NpgsqlConnection myCon = new NpgsqlConnection(sqlDataSource))
+                {
+                    await myCon.OpenAsync();
+                    using (NpgsqlCommand myCommand = new NpgsqlCommand(query, myCon))
+                    {
+
+                        myCommand.Parameters.AddWithValue("@customerid", customerId);
+                        myCommand.Parameters.AddWithValue("@skip", skip);
+                        myCommand.Parameters.AddWithValue("@take", take);
+                        myReader = await myCommand.ExecuteReaderAsync();
+                        table.Load(myReader);
+                        myReader.Close();
+                        await myCon.CloseAsync();
+                    }
+                }
+
+                return table.GetTCollection<Account>();
             }
             catch (Exception)
             {

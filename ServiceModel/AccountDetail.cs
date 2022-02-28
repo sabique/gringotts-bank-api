@@ -8,11 +8,11 @@ using static Utility.Enum;
 
 namespace ServiceModel
 {
-    public class TransactionDetail
+    public class AccountDetail
     {
-        public int Id { get; set; }
+        public int AccountNumber { get; set; }
         public string Type { get; set; }
-        public decimal Amount { get; set; }
+        public string Currency { get; set; }
         public DateTime CreatedOn { get; set; }
         public decimal Balance { get; set; }
     }

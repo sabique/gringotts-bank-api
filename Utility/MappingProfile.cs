@@ -20,6 +20,9 @@ namespace Utility
                 .ForMember(d => d.CreatedOn, s => s.MapFrom(x => DateTime.UtcNow));
 
             CreateMap<DM.Transaction, SM.TransactionDetail>();
+            CreateMap<DM.Account, SM.AccountDetail>()
+                .ForMember(d => d.Balance, s => s.MapFrom(x => x.Amount))
+                .ForMember(d => d.AccountNumber, s => s.MapFrom(x => x.Id));
         }
     }
 }

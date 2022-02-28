@@ -31,5 +31,24 @@ namespace GringottsBank.Controllers
 
             return response.StatusCode == HttpStatusCode.OK ? Ok(response) : BadRequest(response);
         }
+
+        /// <summary>
+        /// Get all the accounts of a customer
+        /// </summary>
+        /// <param name="customerId">The customer id</param>
+        /// <param name="skip">Skip the number of account from the top, default is 0</param>
+        /// <param name="take">Return number of account for a customer, default is 10</param>
+        /// <returns>Returns the list of accounts of a customer</returns>
+        [Route("[action]")]
+        [HttpGet]
+        public async Task<IActionResult> GetCustomerAccounts(int customerId, int skip = 0, int take = 10)
+        {
+            if (!int.TryParse(customerId.ToString(), out _))
+                return BadRequest("Enter a valid customer id");
+
+            var response = await _accountProcess.GetCustomerAccounts(customerId, skip, take);
+
+            return response != null ? Ok(response) : NotFound(response);
+        }
     }
 }
