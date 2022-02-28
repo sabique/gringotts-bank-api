@@ -6,7 +6,6 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Utility;
 using static Utility.Constant;
-using static Utility.Enum;
 
 namespace ProcessLayer
 {

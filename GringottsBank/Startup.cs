@@ -18,7 +18,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Utility;
-using static Utility.Enum;
+using static ServiceModel.Enum;
 
 namespace GringottsBank
 {

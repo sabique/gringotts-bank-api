@@ -9,4 +9,3 @@ D:\Training\GitHub\ServiceModel\obj\Debug\net5.0\ServiceModel.csproj.CoreCompile
 D:\Training\GitHub\ServiceModel\obj\Debug\net5.0\ServiceModel.dll
 D:\Training\GitHub\ServiceModel\obj\Debug\net5.0\ref\ServiceModel.dll
 D:\Training\GitHub\ServiceModel\obj\Debug\net5.0\ServiceModel.pdb
-D:\Training\GitHub\ServiceModel\obj\Debug\net5.0\ServiceModel.csproj.AssemblyReference.cache

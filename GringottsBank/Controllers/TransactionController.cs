@@ -21,8 +21,8 @@ namespace GringottsBank.Controllers
 
         public TransactionController(TransactionProcessResolver processAccessor, ITransactionDetailProcess transactionProcess)
         {
-            this._depositProcess = processAccessor(Utility.Enum.TransactionType.Deposit);
-            this._withdrawProcess = processAccessor(Utility.Enum.TransactionType.Withdraw);
+            this._depositProcess = processAccessor(ServiceModel.Enum.TransactionType.Deposit);
+            this._withdrawProcess = processAccessor(ServiceModel.Enum.TransactionType.Withdraw);
             this._transactionProcess = transactionProcess;
         }
 

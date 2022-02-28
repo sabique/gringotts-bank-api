@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web.Http.Results;
 using Utility;
+using static ServiceModel.Enum;
 
 namespace ProcessLayer
 {
@@ -16,12 +17,14 @@ namespace ProcessLayer
     {
         private readonly IAccountData _accountData;
         private readonly ICustomerData _customerData;
+        private readonly ITransactionData _transactionData;
         private readonly IMapper _mapper;
-        public AccountProcess(IMapper mapper, IAccountData accountData, ICustomerData customerData)
+        public AccountProcess(IMapper mapper, IAccountData accountData, ICustomerData customerData, ITransactionData transactionData)
         {
-            this._mapper = mapper;
-            this._accountData = accountData;
+            _mapper = mapper;
+            _accountData = accountData;
             _customerData = customerData;
+            _transactionData = transactionData;
         }
 
         public async Task<IResponse> Add(OpenAccount account)
@@ -32,8 +35,13 @@ namespace ProcessLayer
                     throw new Exception("Invalid Customer Id");
 
                 var accountDomain = _mapper.Map<DomainModel.Account>(account);
-
                 var response = await _accountData.Add(accountDomain);
+
+                var transactDomain = _mapper.Map<DomainModel.Transaction>(account);
+                transactDomain.AccountId = response;
+                transactDomain.Type = TransactionType.Deposit.ToString();
+
+                await _transactionData.Transact(transactDomain);
 
                 return new SuccessResponse() { Message = $"Opened new account with ID {response}" };
             }

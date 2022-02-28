@@ -3,8 +3,8 @@ using DataLayer;
 using ServiceModel;
 using System;
 using System.Threading.Tasks;
+using static ServiceModel.Enum;
 using static Utility.Constant;
-using static Utility.Enum;
 
 namespace ProcessLayer
 {

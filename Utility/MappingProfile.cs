@@ -1,8 +1,10 @@
 ﻿using AutoMapper;
 using System;
+using static ServiceModel.Enum;
 using static Utility.Constant;
 using DM = DomainModel;
 using SM = ServiceModel;
+
 namespace Utility
 {
     public class MappingProfile : Profile
@@ -23,6 +25,11 @@ namespace Utility
             CreateMap<DM.Account, SM.AccountDetail>()
                 .ForMember(d => d.Balance, s => s.MapFrom(x => x.Amount))
                 .ForMember(d => d.AccountNumber, s => s.MapFrom(x => x.Id));
+
+            CreateMap<SM.OpenAccount, DM.Transaction>()
+                .ForMember(d => d.Amount, s => s.MapFrom(x => x.Amount))
+                .ForMember(d => d.Balance, s => s.MapFrom(x => x.Amount))
+                .ForMember(d => d.CreatedOn, s => s.MapFrom(x => DateTime.UtcNow));
         }
     }
 }
