@@ -13,7 +13,9 @@ The application is mainly divided into 3 layers - Controller, Process Layer and 
 Other Actors:
 1. Service Model: Define the models for entities for the response.
 2. Domain Model: Define the class models for the database tables.
-3. Ulility: Manages the extension class, constants and mapping responsibilities.
+3. Utility: Manages the extension class, constants and mapping responsibilities.
+
+Database: Postgres (deployed on Heroku).
 
 ![Application Design](https://user-images.githubusercontent.com/8267052/155964398-c640c948-bedd-491c-a4de-17845a343448.png)
 
