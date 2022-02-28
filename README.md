@@ -104,3 +104,27 @@ Use this endpoint to fetch transaction details of an account between a date rang
 4. skip: Skip the number of transactions from the top, default is 0.
 5. take: Return number of transactions of an account, default is 10.
 
+## Sample Customer Detail for End Points
+
+Property | Value
+--- | --- 
+**CustomerID** | `1014` 
+**First Name** | `John`
+**Last Name** | `Wick`
+**Email** | `john@wick.com`
+
+**Account Details**
+
+Property | Value
+--- | --- 
+**AccountID** | `100006`
+**Type** | `Saving`
+
+Property | Value
+--- | --- 
+**AccountID** | `100007`
+**Type** | `Current`
+
+## Scope of Improvement
+1. Logging: logging to track the changes can be implemented to keep track of modifications.
+2. ORM: We can reduce the number of line of codes to perform operations with database by using an ORM instead of standard SQL code.
