@@ -86,5 +86,40 @@ namespace DataLayer
                 throw;
             }
         }
+
+        public async Task<List<Transaction>> TransactionList(int accountId, DateTime startDate, DateTime endDate, int skip, int take)
+        {
+            try
+            {
+                string query = $"SELECT id AS \"Id\", amount AS \"Amount\", type AS \"Type\", balance AS \"Balance\", createdon AS \"CreatedOn\", accountid AS \"AccountId\" FROM public.\"Transaction\" WHERE accountid = @accountId AND createdon >= @startDate AND createdon <= @endDate ORDER BY id desc LIMIT @take OFFSET @skip;";
+
+                DataTable table = new DataTable();
+                string sqlDataSource = _configuration.GetConnectionString("database");
+
+                NpgsqlDataReader myReader;
+                using (NpgsqlConnection myCon = new NpgsqlConnection(sqlDataSource))
+                {
+                    await myCon.OpenAsync();
+                    using (NpgsqlCommand myCommand = new NpgsqlCommand(query, myCon))
+                    {
+                        myCommand.Parameters.AddWithValue("@accountid", accountId);
+                        myCommand.Parameters.AddWithValue("@startDate", startDate);
+                        myCommand.Parameters.AddWithValue("@endDate", endDate);
+                        myCommand.Parameters.AddWithValue("@skip", skip);
+                        myCommand.Parameters.AddWithValue("@take", take);
+                        myReader = await myCommand.ExecuteReaderAsync();
+                        table.Load(myReader);
+                        myReader.Close();
+                        await myCon.CloseAsync();
+                    }
+                }
+
+                return table.GetTCollection<Transaction>();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
     }
 }

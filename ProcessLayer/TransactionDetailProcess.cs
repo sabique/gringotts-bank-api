@@ -33,5 +33,19 @@ namespace ProcessLayer
                 return null;
             }
         }
+
+        public async Task<List<TransactionDetail>> Transactions(int accountId, DateTime startDate, DateTime endDate, int skip, int take)
+        {
+            try
+            {
+                var response = await _transactionData.TransactionList(accountId, startDate, endDate, skip, take);
+
+                return _mapper.Map<List<TransactionDetail>>(response);
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
     }
 }
