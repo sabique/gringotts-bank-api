@@ -50,5 +50,22 @@ namespace GringottsBank.Controllers
 
             return response != null ? Ok(response) : NotFound(response);
         }
+
+        /// <summary>
+        /// Get the details of an account
+        /// </summary>
+        /// <param name="accountId">The account number</param>
+        /// <returns>Returns the detail of the account</returns>
+        [Route("[action]")]
+        [HttpGet]
+        public async Task<IActionResult> Get(int accountId)
+        {
+            if (!int.TryParse(accountId.ToString(), out _))
+                return BadRequest("Enter a valid account id");
+
+            var response = await _accountProcess.Get(accountId);
+
+            return response != null ? Ok(response) : NotFound(response);
+        }
     }
 }

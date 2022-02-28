@@ -23,7 +23,7 @@ namespace Utility
             {
                 if (columnNames.Contains(pro.Name.ToLower()))
                 {
-                    pro.SetValue(objT, row[pro.Name]);
+                    pro.SetValue(objT, row[pro.Name.ToLower()]);
                 }
             }
 

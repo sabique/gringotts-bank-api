@@ -11,5 +11,6 @@ namespace ProcessLayer
     {
         Task<IResponse> Add(OpenAccount account);
         Task<List<AccountDetail>> GetCustomerAccounts(int customerId, int skip, int take);
+        Task<AccountDetail> Get(int accountId);
     }
 }

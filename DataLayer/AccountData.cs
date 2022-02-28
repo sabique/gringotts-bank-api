@@ -152,5 +152,37 @@ namespace DataLayer
                 throw;
             }
         }
+
+        public async Task<Account> Get(int accountId)
+        {
+            try
+            {
+                string query = $"SELECT id AS \"Id\", amount AS \"Amount\", type AS \"Type\", currency AS \"Currency\", createdon AS \"CreatedOn\" FROM public.\"Account\" WHERE id=@accountid;";
+
+                DataTable table = new DataTable();
+                string sqlDataSource = _configuration.GetConnectionString("database");
+
+                NpgsqlDataReader myReader;
+                using (NpgsqlConnection myCon = new NpgsqlConnection(sqlDataSource))
+                {
+                    await myCon.OpenAsync();
+                    using (NpgsqlCommand myCommand = new NpgsqlCommand(query, myCon))
+                    {
+
+                        myCommand.Parameters.AddWithValue("@accountid", accountId);
+                        myReader = await myCommand.ExecuteReaderAsync();
+                        table.Load(myReader);
+                        myReader.Close();
+                        await myCon.CloseAsync();
+                    }
+                }
+
+                return table.GetT<Account>();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
     }
 }

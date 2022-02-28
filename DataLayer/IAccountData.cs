@@ -11,5 +11,6 @@ namespace DataLayer
         Task<int> CurrentBalance(long accountId);
         Task UpdateBalance(long accountId, double amount);
         Task<List<Account>> AccountList(int customerId, int skip, int take);
+        Task<Account> Get(int accountId);
     }
 }

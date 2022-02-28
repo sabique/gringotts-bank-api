@@ -56,5 +56,19 @@ namespace ProcessLayer
                 return null;
             }
         }
+
+        public async Task<AccountDetail> Get(int accountId)
+        {
+            try
+            {
+                var response = await _accountData.Get(accountId);
+
+                return _mapper.Map<AccountDetail>(response);
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
     }
 }
